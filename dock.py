@@ -16,5 +16,29 @@ class Card:
     def __repr__(self):
         return self.__str__()
 
+    @property
+    def suit(self):
+        return self._suit
+
+    @suit.setter
+    def suit(self, value):
+        self._suit = value
+
+    @property
+    def rank(self):
+        return self.rank
+
+    @rank.setter
+    def rank(self):
+        return self.rank
+
+
+class Deck:
+    def __init__(self):
+        self._deck = []
+        for suit in Card.suits:
+            for rank in Card.ranks:
+                self._deck.append(Card(suit,rank))
+
 jack_clubs= Card('♠', 'J')
 print(jack_clubs)
