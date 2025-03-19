@@ -12,9 +12,19 @@ class PokerHand:
     def cards(self):
         return self._cards
 
+    def __str__(self):
+        return str(self.cards)
+
     @cards.setter
     def cards(self, value):
         self._cards = value
+
+    @property
+    def is_flush(self):
+        for card in self.cards[1:]:
+            if card[0].suit != card.suit:
+                return False
+        return True
 
     def __str__(self):
         return str(self._cards)
