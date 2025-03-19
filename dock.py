@@ -40,5 +40,8 @@ class Deck:
             for rank in Card.ranks:
                 self._deck.append(Card(suit,rank))
 
+    def __str__(self):
+        return str(self._deck)
+
 jack_clubs= Card('♠', 'J')
 print(jack_clubs)
