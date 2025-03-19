@@ -1,3 +1,5 @@
+import random
+
 class Card:
     ranks = ['2','3','4','5','6','7','8','9','10',
              'J', 'Q', 'K','A']
@@ -43,5 +45,14 @@ class Deck:
     def __str__(self):
         return str(self._deck)
 
+
+    def shuffle(self):
+        random.shuffle(self._deck)
+
 jack_clubs= Card('♠', 'J')
 print(jack_clubs)
+
+deck=Deck()
+print(deck)
+deck.shuffle()
+print(deck)
