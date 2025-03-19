@@ -13,5 +13,8 @@ class Card:
     def __str__(self):
         return f"{self._rank}{self._suit}"
 
+    def __repr__(self):
+        return self.__str__()
+
 jack_clubs= Card('♠', 'J')
 print(jack_clubs)
