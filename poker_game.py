@@ -12,17 +12,14 @@ class PokerHand:
     def cards(self):
         return self._cards
 
-    def __str__(self):
-        return str(self.cards)
-
     @cards.setter
     def cards(self, value):
         self._cards = value
 
     @property
     def is_flush(self):
-        for card in self.cards[1:]:
-            if card[0].suit != card.suit:
+        for card in self._cards[1:]:
+            if self._cards[0].suit != card.suit:
                 return False
         return True
 
@@ -35,3 +32,18 @@ deck.shuffle()
 
 hand = PokerHand(deck)
 print(hand)
+
+count = 0
+flushes = 0
+
+while True:
+    deck = Deck()
+    deck.shuffle()
+    hand = PokerHand(deck)
+    if hand.is_flush:
+        flushes += 1
+        print(f'probability of a flush is {100*flushes/count}%')
+        print(hand)
+        break
+    count += 1
+
