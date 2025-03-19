@@ -50,7 +50,7 @@ class Deck:
         random.shuffle(self._deck)
 
     def deal(self):
-        return self._deck.pop()
+        return self._deck.pop(0)
 
 jack_clubs= Card('♠', 'J')
 print(jack_clubs)
